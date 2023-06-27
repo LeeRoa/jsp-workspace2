@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  	
+  	<servlet>
+		  <servlet-name>homeServlet</servlet-name>
+		  <servlet-class>chap10.servlet.HomeServlet</servlet-class>
+	  </servlet>
+  	
+  	<!-- 필터 등록하기 -->
+  	<filter>
+		  <filter-name>myFilter1</filter-name>
+		  <filter-class>chap10.filter.MyFilter1</filter-class>
+	  </filter>
+	  
+	  <filter>
+		  <filter-name>myFilter2</filter-name>
+		  <filter-class>chap10.filter.MyFilter2</filter-class>
+	  </filter>
+	  
+	  <filter>
+		  <filter-name>characterEncodingFilter</filter-name>
+		  <filter-class>chap10.filter.CharacterEncodingFilter</filter-class>
+	  </filter>
+	  
+	  <!-- 리스너 등록하기 -->
+	  <listener>
+		  <listener-class>chap10.listener.MyServletRequestProcess</listener-class>
+	  </listener>
+	  
+	  <listener>
+		  <listener-class>chap10.listener.ContextLoaderListener</listener-class>
+	  </listener>
+	  
+	  <!-- 필터 매핑하기 -->
+	  <filter-mapping>
+		  <filter-name>myFilter1</filter-name>
+		  <url-pattern>/home</url-pattern>
+		  <url-pattern>/home.jsp</url-pattern>
+	  </filter-mapping>
+
+	  <filter-mapping>
+		  <filter-name>myFilter2</filter-name>
+		  <url-pattern>/home</url-pattern>
+	  </filter-mapping>
+	  
+	  <filter-mapping>
+		  <filter-name>characterEncodingFilter</filter-name>
+		  <url-pattern>/*</url-pattern>
+	  </filter-mapping>
+</web-app>
