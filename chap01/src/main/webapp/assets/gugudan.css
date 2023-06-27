@@ -1,0 +1,24 @@
+* {
+	box-sizing: border-box; 
+}
+
+#gugudan {
+	display: grid;
+	grid-template-columns: repeat(10, 1fr);
+	row-gap: 10px;
+}
+
+.dan {
+	background-color: red;
+	color: white;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 5px;
+}
+
+.gop {
+	background-color: black;
+	color: white;
+	font-size: 20px;
+	padding: 5px;
+}

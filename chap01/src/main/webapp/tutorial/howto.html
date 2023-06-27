@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="EUC-KR">
+	<title>How to Install JSP</title>
+</head>
+<body>
+
+	<h3>1. Eclipse Enterprise Edition 설치</h3>
+	
+	<ul>
+		<li>for Web Developers.. 붙은 버전으로 다운로드</li>
+		<li>File - New - Dynamic Web Project를 눌러 새 프로젝트 생성</li>
+	</ul>
+
+	<h3>2. Apache Tomcat Web Application Server 설치</h3>
+	
+	<ul>
+		<li>Web Application Server (WAS)</li>
+		<li>9.0으로 설치</li>
+		<li>압축 해제 후 새 Dynamic Web Project 생성시 경로를 지정해줘야 한다</li>
+	</ul>
+	
+	<h3>3. 웹 애플리케이션 서버 콘솔에서 실행해보기</h3>
+	
+	<ul>
+		<li>cmd -> cd tomcat/bin -> startup.bat 실행</li>
+		<li>환경변수가 설정되어 있지 않은 경우
+			내 PC(내 컴퓨터) 우클릭 -> 속성 -> 고급 설정 -> 환경변수에서 
+			JAVA_HOME을 환경 변수로 등록(값은 jdk의 경로)</li>
+		<li>포트번호가 겹치는 경우 tomcat/conf/server.xml에서
+			포트번호 8080을 다른 번호로 수정 (ex: 8090)</li>
+		<li>tomcat/webapps에 원하는 파일을 등록하면
+			서버에 접속하는 사용자들에게 해당 페이지를 서비스 할 수 있다</li>
+	</ul>
+	
+	<h3>4. 새 프로젝트 생성하기</h3>
+	
+	<ul>
+		<li>File - New - Dynamic Web Project</li>
+		<li>프로젝트 이름 설정</li>
+		<li>어떤 WAS를 사용할지 결정</li>
+		<li>next 두 번 눌러서 generate web.xml 체크 후 프로젝트 생성</li>
+		<li>web.xml 체크하지 못하고 만든 경우:
+			프로젝트 이름 우클릭 - Java EE Tools - Generate ... 선택</li>
+	</ul>
+
+	<h3>5. 새 프로젝트에 접속하기</h3>
+	
+	<ul>
+		<li>Servers - 우리가 등록한 서버 우클릭 - Add and Remove
+			실행할 프로젝트 add</li>
+		<li>서버 우클릭 후 start</li>
+		<li>웹 브라우저에 직접 주소를 입력해 접속할 수 있다
+			(http://localhost:8090/프로젝트명/webapp)</li>
+		 <li>localhost를 ip주소로 바꿔서 접속할 수 있다
+		 	(IP주소 알아내는 방법 - cmd - ipconfig/all)</li>
+		 <li>localhost 대신 127.0.0.1을 사용할 수 있다 </li>
+		 <li>WEB-INF 폴더 밑에 페이지를 생성하면 접속이 불가능하다</li>
+	</ul>
+</body>
+</html>

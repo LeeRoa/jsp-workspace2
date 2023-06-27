@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>What is http_protocol?</title>
+	<link rel="stylesheet" href="./tutorial.css">
+</head>
+<body>
+
+	<h3># 프로토콜 (Protocol)</h3>
+	
+	<ul>
+		<li>통신 규칙</li>
+		<li>컴퓨터들 간의 통신 절차를 규정하고 해당 절차에 이름을 붙이는 것</li>
+		<li>ftp, http, https, telnet, smtp ... 등등</li>
+	</ul>
+
+	<h3># HTTP 프로토콜의 작동 순서</h3>
+	
+	<ol>
+		<li>사용자(클라이언트, Client)가 웹 브라우저의 주소창에 
+			보고싶은 페이지의 URL을 입력한다
+			(링크를 클릭하는 것도 주소창에 URL을 입력하는 것과 같다)</li>
+		<li>웹 브라우저는 URL에 포함된 서버(호스트, Host)의 IP 주소를 통해
+			해당 웹 서버로 요청(Request)을 보낸다</li>
+		<li>요청을 받은 웹 서버는 클라이언트가 보낸 URL에 포함된 경로(uri)를 보고
+			알맞은 웹 페이지를 클라이언트에게 응답(Response)한다</li>
+		<li>요청을 보냈던 클라이언트의 웹 브라우저가 웹 페이지를 응답 받아
+			클라이언트에게 보여준다</li>
+	</ol>
+
+	<h3># URL</h3>
+	
+	<div id="url-sample">
+		<span id="protocol">https://</span><div>프로토콜</div>
+		<span id="ip-addr">comic.naver.com</span><div>IP주소(도메인)</div>
+		<span id="port">(:443)</span><div>포트번호(80, 443은 생략 가능)</div>
+		<span id="url">/webtoon/detail?titleId=650305&amp;no=388</span>
+		<div>URI(해당 서버의 어떤 페이지를 요청할 것인지)</div> 
+	</div>
+	
+	<h3># DNS (Domain Name Service)</h3>
+
+	<ul>
+		<li>IP주소 자리에 IP주소 대신 쓸 수 있는 보기 좋은 이름</li>
+		<li>도메인 이름을 IP주소로 치환한 후에 IP주소로 해당 웹 서버를 찾아간다</li>
+		<li>DNS 서버는 각 국가의 ISP(Internet Service Provider)가 관리한다</li>
+	</ul>
+	
+	<h3># IP 주소</h3>
+	
+	<ul>
+		<li>각 컴퓨터를 찾아가기 위한 인터넷 상의 주소</li>
+		<li>0.0.0.0 ~ 255.255.255.255까지 사용할 수 있다 (IPv4)</li>
+		<li>나중에 IPv4가 고갈된다면 넘어갈 예정인 IPv6가 준비되어 있다</li>
+	</ul>
+	
+	<h3># 포트 번호</h3>
+	
+	<ul>
+		<li>각 컴퓨터의 어떤 프로그램과 통신하는지 식별하기 위한 번호</li>
+		<li>포트 번호는 0 ~ 65535번까지 사용할 수 있다</li>
+		<li>고정적으로 사용하는 잘 알려진 포트번호(well-known port)들이 존재한다</li>
+		<li>80: http, 443: https, 21: ftp, 22: ssh, 23: telnet ...</li>
+	</ul>
+</body>
+</html>

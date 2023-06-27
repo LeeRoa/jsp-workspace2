@@ -4,6 +4,14 @@
 # Log file
 *.log
 
+
+#Eclipse workspace files
+.metadata/*
+/.metadata/
+
+#Eclipse Server files
+Servers/*
+/Servers/
 # BlueJ files
 *.ctxt
 
@@ -22,3 +30,14 @@
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
 replay_pid*
+
+
+# Eclipse workspace
+.metadata/*
+/.metadata/
+
+#Eclpse Dynamic Web Prifect files
+*.classpath
+*.project
+*/.settings/*
+*.MF
