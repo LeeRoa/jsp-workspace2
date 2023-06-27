@@ -1,0 +1,23 @@
+* {
+	box-sizing: border-box;
+}
+
+#order-list {
+	display: grid;
+	grid-template-columns: 50px 100px 100px 300px 100px;
+	padding-top: 20px;
+}
+
+#order-list > div {
+	border: 2px solid yellowgreen;
+	text-align: center;
+	font-size: 20px;
+}
+
+#order-list > .column {
+	font-size: 24px;
+}
+
+#order-list > div:nth-last-child(-n+5) {
+	background-color: darkorange;
+}

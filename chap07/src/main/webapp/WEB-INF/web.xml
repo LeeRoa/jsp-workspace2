@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+  <display-name>chap07</display-name>
+  <servlet>
+	  <servlet-name>appservlet</servlet-name>
+	  <servlet-class>chap07.servlet.DispatcherServlet</servlet-class>
+  </servlet>
+  
+  <!-- Eclipse의 web.xml은 서버 실행시 
+  	   실제 web.xml에 추가되는 옵션들을 정의하는 곳이다.
+  	   
+  	   ※ 실제 web.xml은 Project Explorer 밑에 Servers에 있다.	   
+  -->
+  
+  <servlet-mapping>
+	  <servlet-name>appservlet</servlet-name>
+	  <url-pattern>/</url-pattern>
+  </servlet-mapping>
+  
+  <servlet-mapping>
+	  <servlet-name>default</servlet-name>
+	  <url-pattern>/assets/*</url-pattern>
+  </servlet-mapping>
+  
+  <!--
+  		위의 /assets/* 경로를 제외한 모든 요청을 appServlet으로 매핑한다.
+		
+		웹 브라우저 주소창에 주소를 직접 입력하는 것도 요청이다.
+		form으로 submit을 누르는 것도 요청이다 (action에 써놓는 것이 서버의 주소다.)
+  		Eclipse에서 Ctrl + F11을 누르는 것도 요청이다.
+  		(이클립스가 주소를 자동으로 만들어서 웹 브라우저를 킨 다음 엔터키를 눌러준다.)
+  		a링크를 클릭하는 것도 요청이다. (href에 써놓는 것이 서버의 주소다.)
+  		자바스크립트 location.href를 수정하는 것도 요청이다.
+  -->
+</web-app>

@@ -1,0 +1,203 @@
+@charset "EUC-KR";
+* {
+	box-sizing: border-box;
+}
+
+#pizza-form {
+	width: 600px;
+	height: 900px;
+	display: flex;
+	flex-wrap: wrap;
+	
+}
+
+#top-div {
+	background-color: red;
+	width: 100%;
+	height: 50%;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#top-form {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	margin-left: 20px;
+}
+
+#bottom-div {
+	background-color: blue;
+	width: 100%;
+	height: 50%;
+}
+
+#pizza {
+	margin: 20px 0 20px 20px;
+	width: 200px;
+	height: 200px;
+	background-image: url(./image/pizza.png);
+	background-size: 100% auto;
+	background-repeat: no-repeat;
+}
+
+#order-form {
+	margin: 20px 0;
+	width: 360px;
+	height: 200px;
+	background-image: url(./image/order_form.png);
+	background-size: 100% 200px;
+	background-repeat: no-repeat;
+}
+
+#crust-btn, #sauce-btn, #cheese-btn {
+	opacity: 0;
+}
+
+#crust-label, #sauce-label, #cheese-label {
+	width: 150px;
+	height: 150px;
+	cursor: pointer;
+}
+
+#bottom-div {
+	position: relative;
+}
+
+#crust {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+#topping {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+#cheese {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	background-color: white;
+}
+
+#crust-title {
+	width: 100%;
+	height: 10%;
+	background-color: white;
+	font-size: 30px;
+	font-family: 'Indie Flower', cursive;
+}
+
+#topping-title {
+	width: 100%;
+	height: 10%;
+	background-color: white;
+	font-size: 30px;
+	font-family: 'Indie Flower', cursive;
+}
+
+#cheese-title {
+	width: 100%;
+	height: 10%;
+	background-color: white;
+	font-size: 30px;
+	font-family: 'Indie Flower', cursive;
+}
+.crust-image {
+	width: 100%;
+	height: 200px;
+	text-align: center;
+}
+.topping-image {
+	width: 100px;
+	height: 100px;
+}
+
+#crust-chioces {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+#crust-chioces > div {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 200px;
+  height: 260px;
+}
+
+#crust-chioces > div > * {
+	text-align: center;
+}
+
+#crust-chioces > div > input {
+	height: 20px;	
+}
+
+#crust-chioces > div > label {
+	font-size: 25px;	
+}
+
+#topping-chioces {
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	width: 100%;
+	height: 90%;
+}
+
+#crust {
+	visibility: visible;
+}
+
+#topping {
+	visibility: hidden;
+}
+
+#cheese {
+	visibility: hidden;
+}
+
+#topping-chioces > div {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(3, 60% 20% 10%);
+}
+
+#topping-chioces > div > * {
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 20px;
+}
+
+#topping-chioces > div > input {
+	padding-top: 20px;
+}
+
+#cheese-chioces {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: 100%;
+	width: 100%;
+	height: 90%;
+}
+
+#cheese-chioces > div {
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: repeat(3, 1fr 50px 1fr);
+}
+
+#cheese-chioces > div > * {
+	width: 100%;
+}
+
+#cheese-chioces > div > label {
+	font-size: 25px;
+	text-align: center;
+}

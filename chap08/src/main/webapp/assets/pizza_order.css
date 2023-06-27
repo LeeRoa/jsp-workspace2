@@ -1,0 +1,10 @@
+#order-list {
+	display: grid;
+	grid-template-columns: 100px 100px 100px 300px 100px;
+}
+
+#order-list > div {
+	border: solid 2px cadetblue;
+	font-size: 20px;
+	text-align: center;
+}

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd" id="WebApp_ID" version="4.0">
+ 	<display-name>chap05</display-name>
+
+	<!-- XML: 데이터를 효율적으로 저장하기 위한 문자열 구조
+			  데이터를 XML 형태로 만들면 다른 언어에서도 다시 해석하여 사용할 수 있다.
+			  ex: Java에서 XML형식 파일을 만든 후 
+			  	  파이썬에서 해당 데이터를 다시 읽어서 사용
+	-->
+
+	<!-- .xml에서도 html과 같은 주석을 사용한다. -->
+	
+	<!-- # web.xml에 servlet 등록하기 -->
+	
+	<!-- (1) .java로 된 서블릿 등록하기 -->
+	<servlet>
+		<servlet-name>myservlet</servlet-name>
+		<servlet-class>chap05.servlet.HelloServlet</servlet-class>
+	</servlet>
+
+ 	<servlet>
+		<servlet-name>elseservlet</servlet-name>
+		<servlet-class>chap05.servlet.ElseServlet</servlet-class>
+		
+		<init-param>
+			<param-name>logo_path</param-name>
+			<param-value>/image/fruit/apple.jpg</param-value>
+		</init-param>
+		<init-param>
+			<param-name>main_color</param-name>
+			<param-value>#123456</param-value>
+		</init-param>
+	</servlet>
+	
+	<!-- (2) .jsp로 된 서블릿 등록하기 -->
+	<servlet>
+		<servlet-name>myservlet2</servlet-name>
+		<jsp-file>/encoding.jsp</jsp-file>
+	</servlet>
+	
+	<!-- # 등록한 서블릿 url 매핑하기
+	
+		* : 모든 것
+		/path/* : 해당 경로 이후 의 모든 것
+		*.hello : 확장자가 .hello인 모든 것
+		/ : 아무런 매핑에도 걸리지 않은 요청이 가게 되는 곳 (※ 매우 중요)
+	-->
+	
+	<servlet-mapping>
+		<servlet-name>myservlet</servlet-name>
+		<url-pattern>/hello/*</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>myservlet2</servlet-name>
+		<url-pattern>/encoding_test</url-pattern>
+	</servlet-mapping>
+	
+	<servlet-mapping>
+		<servlet-name>elseservlet</servlet-name>
+		<url-pattern>/</url-pattern>
+	</servlet-mapping>
+	
+	<!-- 
+		# 초기화 파라미터 (Init Parameter)
+		
+		- 웹 서버를 처음 시작할 때 초기화 되는 변수들을 web.xml에서 설정할 수 있다.
+		- context-param : 모든 서블릿에서 사용할 수 있는 전역 파라미터
+		- init-param : 해당 서블릿에서만 사용할 수 있는 지역 파라미터
+					   <servlet> 내부에 등록한다.
+						   
+		※ 파라미터는 ElseServlet에서 사용해보았음
+	-->
+	<context-param>
+		<param-name>account_id</param-name>
+		<param-value>hr</param-value>
+	</context-param>
+	
+	<context-param>
+		<param-name>account_pw</param-name>
+		<param-value>1234</param-value>
+	</context-param>
+		
+</web-app>
