@@ -1,0 +1,13 @@
+@charset "EUC-KR";
+
+
+#post-grid {
+	display: grid;
+	grid-template-columns: 100px 150px 100px 50px 100px 100px;
+	border: 2px black solid;
+}
+
+#post-grid > div {
+	text-align: center;
+	border: 1px black solid;
+}
