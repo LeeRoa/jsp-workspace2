@@ -9,7 +9,7 @@
 <body>
 	
 	<script>
-		alert("이미 사용중인 아이디입니다.");
+		alert("올바르지 않은 비밀번호입니다.");
 		history.back();
 	</script>
 	

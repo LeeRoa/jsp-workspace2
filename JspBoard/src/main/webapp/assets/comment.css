@@ -1,0 +1,21 @@
+@charset "EUC-KR";
+
+#comment-grid {
+	display: grid;
+	width: 800px;
+	grid-template-columns: 100px 1fr 50px 50px;
+}
+
+#comment-grid > div {
+	border: 1px solid black;
+	font-size: 25px;
+}
+
+#comment-grid > div.comment_id {
+	text-align: center;
+	font-weight: bold;
+}
+
+#comment-grid > div.comment {
+	padding-left: 10px;
+}

@@ -13,7 +13,7 @@ public class BoardListDAO_Impl implements BoardListDAO {
 	@Override
 	public List<Post> getAllWrite() {
 		List<Post> boardList = new ArrayList<>();		
-		String sql = "SELECT * FROM post";
+		String sql = "SELECT * FROM post order by post_id DESC";
 
 		try (
 				Connection conn = DBConnection.getConnection();
@@ -40,8 +40,36 @@ public class BoardListDAO_Impl implements BoardListDAO {
 	}
 
 	@Override
-	public List<Post> getWrite(String user_is) {
-		return null;
+	public Post getWrite(String post_id) {
+		Post post = new Post();
+
+		String sql = "select * from post where post_id=?";
+
+		try (
+				Connection conn = DBConnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				) {
+
+			pstmt.setInt(1, Integer.parseInt(post_id));
+
+			try (
+					ResultSet rs = pstmt.executeQuery();
+					) {
+				rs.next();
+
+				post.setPost_id(rs.getInt("post_id"));
+				post.setPost_word(rs.getString("post_word"));
+				post.setTitle(rs.getString("title"));
+				post.setUser_id(rs.getString("user_id"));
+				post.setUser_pw(rs.getString("user_pw"));
+				post.setViews(rs.getInt("views"));
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return post;
 	}
 
 	// 계정도 추가해야함
@@ -70,25 +98,46 @@ public class BoardListDAO_Impl implements BoardListDAO {
 	}
 
 	@Override
-	public boolean deletePost(int post_id, String user_pw) {
+	public int deletePost(int post_id, String user_pw) {
 
 		String sql = "delete from post where post_id=? and user_pw=?";
-		
+
 		try (
 				Connection conn = DBConnection.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
 				) {
-				
-				pstmt.setInt(1, post_id);
-				pstmt.setString(2, user_pw);
-				
-				pstmt.executeUpdate();
-				
-				return true;
+
+			pstmt.setInt(1, post_id);
+			pstmt.setString(2, user_pw);
+
+			return pstmt.executeUpdate();
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return false;
+		return 0;
+	}
+
+	@Override
+	public int remakePost(int post_id, String post_pw, String post_word) {
+		String sql = "update post set post_word=? where post_id=? and user_pw=?";
+
+		try (
+				Connection conn = DBConnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				) {
+
+			pstmt.setString(1, post_word);
+			pstmt.setInt(2, post_id);
+			pstmt.setString(3, post_pw);
+
+			return pstmt.executeUpdate();
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return 0;
 	}
 }

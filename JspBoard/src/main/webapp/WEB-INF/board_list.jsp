@@ -36,7 +36,7 @@
 		<c:forEach items="${post_list}" var="post">
 			<div class="post">${post.post_id}</div>
 			<button name="title" value="${post.title}"
-				onclick="location.href='./click?title=${post.title}&content=${post.post_word}'">
+				onclick="location.href='./click?post_id=${post.post_id}'">
 				${post.title}</button>
 			<div class="post">${post.user_id}</div>
 			<div>${post.views}</div>

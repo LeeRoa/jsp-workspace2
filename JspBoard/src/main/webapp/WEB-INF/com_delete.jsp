@@ -4,12 +4,12 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
-<title>게시판 수정 폼</title>
+<title>댓글 삭제 폼</title>
 </head>
 <body>
-<form method="post" action="./remake2?post_id=<%=request.getParameter("post_id") %>">
-<table border="1" summary="게시판 수정 폼"> 
- <caption><b>게시판 수정 폼</b></caption>
+<form name="DeleteForm" method="post" action="./com_delete2?com_num=<%=request.getParameter("com_num") %>">
+<table border="1" summary="댓글 삭제 폼"> 
+ <caption><b>게시판 삭제 폼</b></caption>
  <colgroup>
   <col width="100px"/>
   <col width="500px"/>
@@ -22,13 +22,8 @@
  </tbody>
 </table>
 
-<h3>수정할 내용</h3>
-<div>
-	<textarea name="post_word" rows="10" cols="50" placeholder="Input some text."></textarea>
-</div>
-
 <p>
- <input type="submit" value="수정">
+ <input type="submit" value="삭제">
  <input type="button" value="취소" onclick="history.back()">
 </p>
 </form>
