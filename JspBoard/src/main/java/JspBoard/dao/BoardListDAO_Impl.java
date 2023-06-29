@@ -14,7 +14,7 @@ public class BoardListDAO_Impl implements BoardListDAO {
 	public List<Post> getAllWrite() {
 		List<Post> boardList = new ArrayList<>();		
 		String sql = "SELECT * FROM post order by post_id DESC";
-
+		
 		try (
 				Connection conn = DBConnection.getConnection();
 				PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -139,5 +139,74 @@ public class BoardListDAO_Impl implements BoardListDAO {
 		}
 
 		return 0;
+	}
+
+	@Override
+	public void plusViews(String post_id) {
+		String sql = "select * from post where post_id=?";
+		String sql2 = "update post set views=? where post_id=?";
+		try (
+				Connection conn = DBConnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				) {
+			
+			pstmt.setInt(1, Integer.parseInt(post_id));
+			pstmt.executeUpdate();
+			
+			try (
+				ResultSet rs = pstmt.executeQuery();
+				PreparedStatement pstmt2 = conn.prepareStatement(sql2);
+			) {
+				rs.next();
+				int views = rs.getInt("views");
+				views++;
+				System.out.println(views);
+				
+				pstmt2.setInt(1, views);
+				pstmt2.setInt(2, Integer.parseInt(post_id));
+				pstmt2.executeUpdate();
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
+	@Override
+	public List<Post> get10Write(int num) {
+		List<Post> boardList = new ArrayList<>();		
+		String sql = "SELECT * FROM (SELECT ROWNUM AS NUM, post.* FROM post order by post_id DESC)\r\n"
+				+ "WHERE NUM BETWEEN ? AND ?";
+		
+		int fin = num * 10;
+		int sta = fin - 9;
+		
+		try (
+				Connection conn = DBConnection.getConnection();
+				PreparedStatement pstmt = conn.prepareStatement(sql);
+				) {
+				pstmt.setInt(1, sta);
+				pstmt.setInt(2, fin);
+				pstmt.executeUpdate();
+				
+			try (
+					ResultSet rs = pstmt.executeQuery();
+			) {
+				while (rs.next()) {
+					Post post = new Post();
+					post.setPost_id(rs.getInt("post_id"));
+					post.setTitle(rs.getString("title"));
+					post.setUser_id(rs.getString("user_id"));
+					post.setPost_word(rs.getString("post_word"));
+					post.setViews(rs.getInt("views"));
+					
+					boardList.add(post);
+				}
+			}
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return boardList;
 	}
 }

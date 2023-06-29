@@ -9,6 +9,8 @@ public interface BoardListDAO {
 	/** 모든 게시글을 가져오는 메서드 */
 	List<Post> getAllWrite();
 	
+	List<Post> get10Write(int num);
+	
 	/** 해당 post 아이디의 게시글을 가져오는 메서드 */
 	Post getWrite(String post_id);
 	
@@ -20,4 +22,7 @@ public interface BoardListDAO {
 	
 	/** 해당 글을 수정하는 메서드 */
 	int remakePost(int post_id, String post_pw, String post_word);
+	
+	/** 해당 글의 제목을 누르면 조회수가 올라가는 메서드 */
+	void plusViews(String post_id);
 }

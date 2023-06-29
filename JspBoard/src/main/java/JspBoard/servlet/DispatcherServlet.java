@@ -26,6 +26,8 @@ import JspBoard.process.LoginBusinessLogic;
 import JspBoard.process.LoginOkBusinessLogic;
 import JspBoard.process.LoginPlusBusinessLogic;
 import JspBoard.process.NotJoinBusinessLogic;
+import JspBoard.process.Page2BusinessLogic;
+import JspBoard.process.Page3BusinessLogic;
 import JspBoard.process.PostBusinessLogic;
 import JspBoard.process.Remake2BusinessLogic;
 import JspBoard.process.RemakeBusinessLogic;
@@ -44,7 +46,7 @@ public class DispatcherServlet extends HttpServlet {
 	 	- 최근에 적은 글이 가장 위에 보여야 한다.  (OK)
 	 	- 글 번호는 반드시 시퀀스를 통해 부여할 것 (OK)
 	 	- 글 목록에서 제목을 클릭하면 해당 글의 상세 내용을 보는 페이지로 넘어간다. (OK)
-	 	- 글의 내용을 볼 때마다 조회수가 올라가야 한다.
+	 	- 글의 내용을 볼 때마다 조회수가 올라가야 한다. (OK)
 	 	  (단, 조회수는 한 브라우저당 10분에 1회씩만 올릴 수 있다.)
 	 	- 글 쓰기 기능이 있다. (OK)
 	 	- 글 수정 및 삭제 기능이 있다. (OK)
@@ -79,6 +81,8 @@ public class DispatcherServlet extends HttpServlet {
 		processMapping.put(contextPath + "/com_remake::GET", new CommentRemakeBusinessLogic());
 		processMapping.put(contextPath + "/com_delete2::POST", new CommentDelete2BusinessLogic());
 		processMapping.put(contextPath + "/com_remake2::POST", new CommentRemake2BusinessLogic());
+		processMapping.put(contextPath + "/board_list2::GET", new Page2BusinessLogic());
+		processMapping.put(contextPath + "/board_list3::GET", new Page3BusinessLogic());
 	}
 
 	@Override

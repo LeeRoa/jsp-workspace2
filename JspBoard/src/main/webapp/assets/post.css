@@ -2,16 +2,103 @@
 
 * {
 	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#title1 {
+	text-align: center;
 }
 
 #post-grid {
-	width: 600px;
+	width: 1200px;
+	height: 400px;
 	display: grid;
-	grid-template-columns: 7% 30% 20% 10% 1fr 1fr;
-	border: 2px black solid;
+	grid-template-columns: 83px 643px 120px 10% 1fr 1fr;
+	grid-template-rows: 45px repeat(10, 1fr);
+	border-top: 2px black solid;
+	border-bottom: 1px #D2d2d2 solid;
+	margin: 0 auto;
 }
 
-#post-grid > div {
+#post-grid>div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
 	text-align: center;
-	border: 1px black solid;
+	border-bottom: 1px #D2d2d2 solid;
+	color: #606060;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#page {
+	margin: 0 auto;
+	margin-top: 26px;
+	display: flex; 
+	justify-content : center;
+	width: 330px;
+	height: 30px;
+	justify-content: center;
+}
+
+#post-grid>.title {
+	border: 0;
+	outline: 0;
+	background-color: white;
+	border-bottom: 1px #D2d2d2 solid;
+	color: #2C78C6;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+#post-grid>.title:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#post-btn {
+	border: 0;
+	outline: 0;
+	margin-top: 15px;
+	margin-left: 78%;
+	width: 67px;
+	height: 40px;
+	background-color: #004FA8;
+	color: white;
+}
+
+#post-grid > :nth-child(n+1):nth-child(-n+6) {
+	background-color: #F9F9F9;
+}
+
+#remake-btn {
+	border: 0;
+	outline: 0;
+	background-color: white;
+	border-bottom: 1px #D2d2d2 solid;
+}
+
+#remake-btn:hover {
+	cursor: pointer;
+	text-decoration: underline; } #delete-btn {
+	border: 0;
+	outline: 0;
+	background-color: white;
+	border-bottom: 1px #D2d2d2 solid;
+}
+
+#delete-btn:hover {
+	cursor: pointer;
+	text-decoration: underline;
+}
+
+#page>button {
+	width: 30px;
+	height: 30px;
+	border: 1px #D2d2d2 solid;
+	outline: 0;
+	background-color: white;
+}
+
+#page>button:first-child {
+	background-color: #AD0000;
+	color: white;
 }

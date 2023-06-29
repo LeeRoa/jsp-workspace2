@@ -1,5 +1,41 @@
 @charset "EUC-KR";
 
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+h2 {
+	margin-left: 20px;
+}
+
+#com-grid {
+	border-top: 1px solid black;
+	display: grid;
+	width: 1200px;
+	height: 520px;
+	margin: 0 auto;
+	grid-template-rows: 60px 45px 45px 1fr;
+	grid-template-columns: 100%;
+}
+
+#login {
+	border-top: 1px solid black;
+	display: grid;
+	width: 1200px;
+	height: 320px;
+	margin: 0 auto;
+	grid-template-columns: 300px 700px 200px;
+}
+
+#login > * {
+	border: 1px black solid;
+}
+
 #comment-grid {
 	display: grid;
 	width: 800px;
@@ -18,4 +54,68 @@
 
 #comment-grid > div.comment {
 	padding-left: 10px;
+}
+
+#view-grid {
+	border-top: 1px solid black;
+	display: grid;
+	width: 1200px;
+	height: 520px;
+	margin: 0 auto;
+	grid-template-rows: 60px 45px 45px 1fr;
+	grid-template-columns: 100%;
+}
+
+#view-grid > * {
+	border-bottom: 1px solid #D2d2d2;
+	padding-left: 20px;
+}
+
+#title {
+	display: flex;
+	align-items: center;
+	font-size: 26px;
+	font-weight: bold;
+}
+
+#user_id {
+	display: grid;
+	grid-template-columns: 178px 1fr;
+}
+
+#user_id > * {
+	display:flex;
+	align-items: center;
+}
+
+#views {
+	display: grid;
+	grid-template-columns: 178px 1fr;
+}
+
+#views > * {
+	display:flex;
+	align-items: center;
+}
+
+#content {
+	padding: 20px;
+	margin-left: 20px; 
+}
+
+#back {
+	border: 0;
+	outline: 0;
+	margin-top: 15px;
+	margin-left: 78%;
+	margin-bottom: 15px;
+	width: 67px;
+	height: 40px;
+	background-color: #004FA8;
+	color: white;
+}
+
+#id, #pw {
+	height: 25px;
+	font-size: 20px;
 }

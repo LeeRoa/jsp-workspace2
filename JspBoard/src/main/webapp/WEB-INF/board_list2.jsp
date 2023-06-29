@@ -27,7 +27,7 @@
 		<div id="delete">ªË¡¶</div>
 		<%
 		BoardListDAO dao = new BoardListDAO_Impl();
-		List<Post> post_list = dao.get10Write(1);
+		List<Post> post_list = dao.get10Write(2);
 		List<Post> all_list = dao.getAllWrite();
 		int size = all_list.size();
 		System.out.println(size);

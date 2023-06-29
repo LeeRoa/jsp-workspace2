@@ -22,6 +22,8 @@ public class ViewBusinessLogic implements BusinessLogic {
 		
 		request.setAttribute("title", post.getTitle());
 		request.setAttribute("content", post.getPost_word());
+		request.setAttribute("user_id", post.getUser_id());
+		request.setAttribute("views", post.getViews());
 		
 		return "view";
 	}
