@@ -88,6 +88,8 @@ public class DispatcherServlet extends HttpServlet {
 	@Override
 	protected void service(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("EUC-KR");
+		
 		System.out.println("사용자가 요청한 URL: " + request.getRequestURL());
 		System.out.println("사용자가 요청한 URI: " + request.getRequestURI());
 		System.out.println("요청 방식: " + request.getMethod());

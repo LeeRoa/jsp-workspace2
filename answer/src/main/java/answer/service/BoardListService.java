@@ -25,11 +25,12 @@ public class BoardListService implements Service {
 		} catch (Exception e) {
 			page = 1;
 		}
-		Pagination pagination = new Pagination(page, 10);
-		
+		Pagination pagination = new Pagination(page, 10, boardDAO.getBoardCount());
+
 		// page -> select * from board where board_id between a and b;
 		request.setAttribute("boards", boardDAO.getPage(pagination));
 		request.setAttribute("page", pagination);
+		request.setAttribute("", pagination);
 		// /WEB-INF/views/board/list.jsp
 		return "/board/list";
 	}

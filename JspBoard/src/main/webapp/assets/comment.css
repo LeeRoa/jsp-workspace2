@@ -27,13 +27,20 @@ h2 {
 	border-top: 1px solid black;
 	display: grid;
 	width: 1200px;
-	height: 320px;
+	height: 120px;
 	margin: 0 auto;
-	grid-template-columns: 300px 700px 200px;
+	grid-template-columns: 150px 1fr 77px;
 }
 
-#login > * {
-	border: 1px black solid;
+#id, #pw {
+	width: 150px;
+	height: 40px;
+	font-size: 15px;
+	padding-left: 10px;
+}
+
+#id {
+	margin: 10px 0 1px;
 }
 
 #comment-grid {
@@ -115,7 +122,20 @@ h2 {
 	color: white;
 }
 
-#id, #pw {
-	height: 25px;
-	font-size: 20px;
+#com_word {
+	margin: 10px;
+	padding: 15px;
+	resize: none;
 }
+
+#submit {
+	border: 0;
+	outline: 0;
+	margin-top: 10px;
+	margin-bottom: 15px;
+	width: 77px;
+	height: 40px;
+	background-color: #004FA8;
+	color: white;
+}
+

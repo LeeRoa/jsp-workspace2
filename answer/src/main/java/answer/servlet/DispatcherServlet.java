@@ -10,9 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import answer.service.BoardListService;
-import answer.service.BoardModifyService;
-import answer.service.Service;
+import answer.service.*;
 
 public class DispatcherServlet extends HttpServlet {
 
@@ -43,12 +41,16 @@ public class DispatcherServlet extends HttpServlet {
 		String contextPath = config.getServletContext().getContextPath();
 		
 		serviceMapping.put(contextPath + "/board/list::GET", new BoardListService());
+		serviceMapping.put(contextPath + "/board/detail::GET", new BoardDetailService());
 		serviceMapping.put(contextPath + "/board/modify::GET", new BoardModifyService());
+		serviceMapping.put(contextPath + "/board/modify::POST", new BoardUpadateService());
 	}
 
 	@Override
 	protected void service(HttpServletRequest request, 
 			HttpServletResponse response) throws ServletException, IOException {
+		request.setCharacterEncoding("EUC-KR");
+		
 		System.out.println("사용자가 요청한 URL: " + request.getRequestURL());
 		System.out.println("사용자가 요청한 URI: " + request.getRequestURI());
 		System.out.println("요청 방식: " + request.getMethod());

@@ -15,7 +15,9 @@
 <meta charset="EUC-KR">
 <title>게시글 보기</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+@import
+	url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap')
+	;
 </style>
 <link rel="stylesheet" href="./assets/comment.css" />
 </head>
@@ -37,17 +39,23 @@
 	</div>
 
 	<button id="back" onclick="history.back()">목록</button>
-	
-		<form id="login" action="./comment?post_id=<%=request.getParameter("post_id") %>"
-			method="POST">
-			<input id="id" type="text" name="id" placeholder="아이디 입력" />
+
+	<form id="login"
+		action="./comment?post_id=<%=request.getParameter("post_id") %>"
+		method="POST">
+
+		<div id="login-form">
+			<input id="id" type="text" name="id" placeholder="아이디 입력" /> <br>
 			<input id="pw" type="password" name="pw" placeholder="비밀번호 입력" />
-			<textarea name="com_word" rows="10" cols="30" placeholder="댓글을 작성해주세요."></textarea>
-			<input type="submit" value="댓글달기" />
-		</form>
+		</div>
+		<textarea id="com_word" name="com_word" rows="10" cols="30"
+			placeholder="타인의 권리를 침해하거나 명예를 훼손하는 댓글은 운영원칙 및 관련 법률에 제재를 받을 수 있습니다."></textarea>
+		<input id="submit" type="submit" value="댓글달기" />
+
+	</form>
 	<div id="com-grid">
 		<h2>댓글목록</h2>
-	
+
 		<div id="comment-grid">
 			<c:forEach items="${com_list}" var="com">
 				<div class="comment_id">${com.com_id}</div>

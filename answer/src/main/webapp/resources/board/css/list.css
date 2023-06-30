@@ -1,4 +1,16 @@
 #board-container {
 	display: grid;
-	grid-template-columns: 100px 4fr 1fr 1fr;
+	grid-template-columns: 100px 4fr 1fr 1fr 1fr;
+}
+
+.board-title {
+	cursor: pointer;
+}
+
+.board-title:hover {
+	text-decoration: underline 2px solid black;
+}
+
+.curr-page {
+	color: red;
 }
