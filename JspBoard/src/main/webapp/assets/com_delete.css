@@ -1,0 +1,51 @@
+@charset "EUC-KR";
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#view-grid {
+	display: grid;
+	grid-template-rows: repeat(3, 60px);
+	width: 1200px;
+	margin: 0 auto;
+	border-top: 2px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+#view-grid > div { 
+	display: grid;
+	grid-template-columns: 20% 80%;
+	border-bottom: 1px solid #D2d2d2;
+	padding-left: 20px;
+}
+
+#pw > form {
+	display: grid;
+	grid-template-columns: 300px 1fr;
+}
+
+#btns {
+	margin-left: 10px;
+}
+
+#btns > * {
+	border: 0;
+	outline: 0;
+	background-color: #004FA8;
+	color: white;
+	height: 30px;
+}
+
+#password {
+	height: 30px;
+}
+
+#user_id > *, #content > *, #pw > * {
+	display: flex;
+	align-items: center;
+}

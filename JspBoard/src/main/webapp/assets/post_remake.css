@@ -1,0 +1,55 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#remake-form {
+	display: grid;
+	grid-template-rows: repeat(2, 60px) 1fr 60px;
+	height: 740px;
+	width: 1200px;
+	margin: 0 auto;
+	border-top: 2px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+#remake-form > div {
+	display: grid;
+	grid-template-columns: 20% 80%;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+#btn {
+	display: grid;
+	grid-template-columns: 200px 1fr;
+}
+
+#btn > :first-child {
+	height: 30px;
+}
+
+#btns {
+	margin-left: 10px;
+}
+
+#textarea {
+	margin: 10px 0;
+	resize: none;	
+}
+
+#btns > * {
+	border: 0;
+	outline: 0;
+	background-color: #004FA8;
+	color: white;
+	height: 30px;
+}
+
+#remake-form > div > * {
+	display: flex;
+	align-items: center;
+}

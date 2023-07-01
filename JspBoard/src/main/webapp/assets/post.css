@@ -40,16 +40,19 @@
 	justify-content: center;
 }
 
-#post-grid>.title {
+#post-grid> button {
 	border: 0;
 	outline: 0;
 	background-color: white;
 	border-bottom: 1px #D2d2d2 solid;
+}
+
+#post-grid> button > .title {
 	color: #2C78C6;
 	font-family: 'Noto Sans KR', sans-serif;
 }
 
-#post-grid>.title:hover {
+#post-grid> button > .title:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }
@@ -63,6 +66,10 @@
 	height: 40px;
 	background-color: #004FA8;
 	color: white;
+}
+
+#post-btn:hover {
+	cursor: pointer;
 }
 
 #post-grid > :nth-child(n+1):nth-child(-n+6) {
@@ -98,7 +105,18 @@
 	background-color: white;
 }
 
-#page>button:first-child {
+#page>button:hover {
+	cursor: pointer;
+}
+
+#page> .select-btn {
 	background-color: #AD0000;
 	color: white;
+}
+
+#prev, #next {
+	display: flex;
+	justify-items: center;
+	align-items: center;
+	font-size: 20px;
 }

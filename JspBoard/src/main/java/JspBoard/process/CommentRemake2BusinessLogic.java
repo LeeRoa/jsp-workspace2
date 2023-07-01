@@ -17,6 +17,10 @@ public class CommentRemake2BusinessLogic implements BusinessLogic {
 		String password = request.getParameter("password");
 		String com_word = request.getParameter("com_word");
 		
+		System.out.println(com_num);
+		System.out.println(com_word);
+		System.out.println(password);
+		
 		int row = dao.remakeComment(Integer.parseInt(com_num), password, com_word);
 		
 		if (row > 0) {

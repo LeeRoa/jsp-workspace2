@@ -38,7 +38,7 @@
 		<div id="content">${content}</div>
 	</div>
 
-	<button id="back" onclick="history.back()">목록</button>
+	<button id="back" onclick="location.href='./board_list?page=1'">목록</button>
 
 	<form id="login"
 		action="./comment?post_id=<%=request.getParameter("post_id") %>"
@@ -53,19 +53,21 @@
 		<input id="submit" type="submit" value="댓글달기" />
 
 	</form>
+
 	<div id="com-grid">
-		<h2>댓글목록</h2>
+		<h2>전체 댓글</h2>
 
 		<div id="comment-grid">
 			<c:forEach items="${com_list}" var="com">
 				<div class="comment_id">${com.com_id}</div>
 				<div class="comment">${com.com_word}</div>
 				<button type="button" id="remake-btn"
-					onclick="window.location='com_remake?com_num=${com.com_num}'">수정하기</button>
+					onclick="window.location='com_remake?com_num=${com.com_num}'">수정</button>
 				<button type="button" id="delete-btn"
-					onclick="window.location='com_delete?com_num=${com.com_num}'">삭제하기</button>
+					onclick="window.location='com_delete?com_num=${com.com_num}'">삭제</button>
 			</c:forEach>
 		</div>
 	</div>
+
 </body>
 </html>

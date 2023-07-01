@@ -1,0 +1,62 @@
+@charset "EUC-KR";
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#view-grid {
+	display: grid;
+	grid-template-rows: repeat(3, 60px);
+	width: 1200px;
+	margin: 0 auto;
+	border-top: 2px solid #d2d2d2;
+	border-bottom: 1px solid #d2d2d2;
+}
+
+#view-grid > div:not(#pw) { 
+	display: grid;
+	grid-template-columns: 20% 80%;
+	border-bottom: 1px solid #D2d2d2;
+	padding-left: 20px;
+}
+
+#pw {
+	padding-left: 20px;
+	display: grid;
+	grid-template-columns: 20% 300px 1fr;
+}
+
+#btns > * {
+	border: 0;
+	outline: 0;
+	background-color: #004FA8;
+	color: white;
+	height: 30px;
+	margin-left: 5px;
+}
+
+#textarea {
+	margin: 5px 0 ;
+	resize: none;
+	font-size: 15px;
+	padding: 5px;
+}
+
+#pw > :nth-child(2) {
+	display: flex;
+	align-items: center;
+}
+
+#password {
+	height: 30px;
+	width: 300px;
+}
+
+#user_id > *, #content > *, #pw > * {
+	display: flex;
+	align-items: center;
+}

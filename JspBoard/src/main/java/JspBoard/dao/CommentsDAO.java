@@ -105,4 +105,35 @@ public class CommentsDAO {
 		}
 		return 0;
 	}
+	
+	public Comment getComment(int com_num) {
+		Comment comment = new Comment();
+		String sql = "select * from comments where com_num=?";
+		try (
+			Connection conn = DBConnection.getConnection();
+			PreparedStatement pstmt = conn.prepareStatement(sql);
+		) {
+			
+			pstmt.setInt(1, com_num);
+			
+			try (
+				ResultSet rs = pstmt.executeQuery();
+			) {
+				rs.next();
+				
+				comment.setCom_id(rs.getString("com_id"));
+				comment.setCom_num(rs.getInt("com_num"));
+				comment.setCom_pw(rs.getString("com_pw"));
+				comment.setCom_word(rs.getString("com_word"));
+				comment.setPost_id(rs.getInt("post_id"));
+				
+				return comment;
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return null;
+	}
 }

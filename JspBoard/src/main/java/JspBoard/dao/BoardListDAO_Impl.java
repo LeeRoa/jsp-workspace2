@@ -120,8 +120,8 @@ public class BoardListDAO_Impl implements BoardListDAO {
 	}
 
 	@Override
-	public int remakePost(int post_id, String post_pw, String post_word) {
-		String sql = "update post set post_word=? where post_id=? and user_pw=?";
+	public int remakePost(int post_id, String post_pw, String post_word, String title) {
+		String sql = "update post set post_word=?, title=? where post_id=? and user_pw=?";
 
 		try (
 				Connection conn = DBConnection.getConnection();
@@ -129,8 +129,9 @@ public class BoardListDAO_Impl implements BoardListDAO {
 				) {
 
 			pstmt.setString(1, post_word);
-			pstmt.setInt(2, post_id);
-			pstmt.setString(3, post_pw);
+			pstmt.setString(2, title);
+			pstmt.setInt(3, post_id);
+			pstmt.setString(4, post_pw);
 
 			return pstmt.executeUpdate();
 

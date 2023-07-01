@@ -21,7 +21,7 @@ public interface BoardListDAO {
 	int deletePost(int post_id, String post_pw);
 	
 	/** 해당 글을 수정하는 메서드 */
-	int remakePost(int post_id, String post_pw, String post_word);
+	int remakePost(int post_id, String post_pw, String post_word, String title);
 	
 	/** 해당 글의 제목을 누르면 조회수가 올라가는 메서드 */
 	void plusViews(String post_id);

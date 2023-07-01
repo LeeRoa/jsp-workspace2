@@ -26,8 +26,7 @@ import JspBoard.process.LoginBusinessLogic;
 import JspBoard.process.LoginOkBusinessLogic;
 import JspBoard.process.LoginPlusBusinessLogic;
 import JspBoard.process.NotJoinBusinessLogic;
-import JspBoard.process.Page2BusinessLogic;
-import JspBoard.process.Page3BusinessLogic;
+import JspBoard.process.PageBusinessLogic;
 import JspBoard.process.PostBusinessLogic;
 import JspBoard.process.Remake2BusinessLogic;
 import JspBoard.process.RemakeBusinessLogic;
@@ -81,8 +80,7 @@ public class DispatcherServlet extends HttpServlet {
 		processMapping.put(contextPath + "/com_remake::GET", new CommentRemakeBusinessLogic());
 		processMapping.put(contextPath + "/com_delete2::POST", new CommentDelete2BusinessLogic());
 		processMapping.put(contextPath + "/com_remake2::POST", new CommentRemake2BusinessLogic());
-		processMapping.put(contextPath + "/board_list2::GET", new Page2BusinessLogic());
-		processMapping.put(contextPath + "/board_list3::GET", new Page3BusinessLogic());
+		processMapping.put(contextPath + "/board_list::GET", new PageBusinessLogic());
 	}
 
 	@Override

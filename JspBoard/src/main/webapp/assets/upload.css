@@ -1,0 +1,78 @@
+* {
+	box-sizing: border-box;
+	font-family: 'Noto Sans KR', sans-serif;
+}
+
+h1 {
+	text-align: center;
+}
+
+#post-form {
+	display: grid;
+	grid-template-rows: repeat(3, 60px) 1fr 60px;
+	height: 800px;
+	width: 1200px;
+	margin: 0 auto;
+	border-top: 2px solid #d2d2d2;
+}
+
+#post-form > div:not(#ok) {
+	border-bottom: 1px solid #d2d2d2;
+	display: grid;
+	grid-template-columns: 20% 80%;
+}
+
+#post-form > div:not(#ok) > * {
+	display: flex;
+	align-items: center;
+}
+
+#ok {
+	display: flex;
+	flex-direction: row;
+	justify-content: right;
+	align-items: center;
+}
+
+#ok > * {
+	border: 0;
+	outline: 0;
+	background-color: #004FA8;
+	color: white;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 77px;
+	height: 40px;
+	margin-left: 5px;
+}
+
+#ok > :nth-child(2) {
+	background-color: rgb(66, 66, 66);
+}
+
+#ok > *:hover {
+	cursor: pointer;
+}
+
+#post-form > div:not(#ok, #content) > :nth-child(2) {
+	display: flex;
+	align-items: center;
+}
+
+input:not(#title-form, #submit) {
+	display: flex;
+	align-items: center;
+	height: 30px;
+	width: 200px;
+}
+
+#title-form {
+	height: 30px;
+	width: 500px;
+}
+
+#textarea {
+	margin: 10px 0;
+	resize: none;
+}

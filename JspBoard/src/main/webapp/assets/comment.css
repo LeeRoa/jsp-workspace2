@@ -14,20 +14,20 @@ h2 {
 }
 
 #com-grid {
-	border-top: 1px solid black;
+	border-top: 1px solid #D2d2d2;
 	display: grid;
 	width: 1200px;
-	height: 520px;
 	margin: 0 auto;
 	grid-template-rows: 60px 45px 45px 1fr;
 	grid-template-columns: 100%;
 }
 
 #login {
-	border-top: 1px solid black;
+	border-top: 2px solid #004FA8;
+	border-bottom: 2px solid #004FA8;
 	display: grid;
 	width: 1200px;
-	height: 120px;
+	height: 150px;
 	margin: 0 auto;
 	grid-template-columns: 150px 1fr 77px;
 }
@@ -45,18 +45,23 @@ h2 {
 
 #comment-grid {
 	display: grid;
-	width: 800px;
-	grid-template-columns: 100px 1fr 50px 50px;
+	width: 1200px;
+	grid-template-columns: 100px 1fr 60px 60px;
+	border-top: 1px solid #D2d2d2;
 }
 
 #comment-grid > div {
-	border: 1px solid black;
-	font-size: 25px;
+	border-bottom: 1px solid #D2d2d2;
+	font-size: 15px;
+	display: flex;
+	align-items: center;
+	padding: 10px;
 }
 
 #comment-grid > div.comment_id {
 	text-align: center;
 	font-weight: bold;
+	justify-content: center;
 }
 
 #comment-grid > div.comment {
@@ -113,9 +118,9 @@ h2 {
 #back {
 	border: 0;
 	outline: 0;
-	margin-top: 15px;
+	margin-top: 20px;
 	margin-left: 78%;
-	margin-bottom: 15px;
+	margin-bottom: 25px;
 	width: 67px;
 	height: 40px;
 	background-color: #004FA8;
@@ -126,6 +131,7 @@ h2 {
 	margin: 10px;
 	padding: 15px;
 	resize: none;
+	font-size: 15px;
 }
 
 #submit {
@@ -139,3 +145,18 @@ h2 {
 	color: white;
 }
 
+#remake-btn, #delete-btn {
+	border: 0;
+	border-top: solid 1px #d2d2d2;
+	outline: 0;
+	background-color: #004FA8;
+	color: white;
+}
+
+#remake-btn {
+	border-right: 1px solid white;
+}
+
+#remake-btn:hover, #delete-btn:hover, #submit:hover, #back:hover {
+	cursor: pointer;
+}
